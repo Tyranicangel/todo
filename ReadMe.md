@@ -2,7 +2,7 @@
 To-Do application available for Desktop, Mobile and Web
 
 ## Keywords
-Angular, Node, Express, Material, Mongo
+Angular, Node, Express, Material, Mongo, Ionic
 
 ## Installation
 Set the database,run the migrations and install the components using nodes npm package manager.
