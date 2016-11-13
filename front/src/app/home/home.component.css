@@ -1,0 +1,7 @@
+.mdl-layout__content{
+	background: url('assets/background.png');
+	background-size: cover;
+}
+.mdl-layout-title{
+	font-size:25px;
+}

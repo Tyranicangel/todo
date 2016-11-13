@@ -1,0 +1,14 @@
+.mdl-cell{
+	text-align: center;
+	color:#ffffff;
+}
+.homecontent{
+	font-size:25px;
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+.mdl-layout__content{
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
