@@ -12,9 +12,15 @@ html,body{
 }
 .fullwidth-grid{
 	width: 100%;
+	display:flex;
+	justify-content: center;
 }
 :host{
 	width: 100%;
 	display: block;
 	position: absolute;
+}
+.fullwidth-grid-left{
+	width: 100%;
+	display:flex;
 }

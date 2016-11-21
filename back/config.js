@@ -1,5 +1,5 @@
 module.exports={
-	'secret'='tyranicangel',
+	'secret':'tyranicangel',
 	'database':'mongodb://localhost/todo',
 	'environment':'development'
 }

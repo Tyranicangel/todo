@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Animations } from '../../animation';
+import { Router } from '@angular/router';
+
+import { User } from './user';
+import { ApiService } from '../../api.service';
+import { AlertService } from '../../alert/alert.service';
+
+
 
 @Component({
   selector: 'app-signup',
@@ -7,10 +13,30 @@ import { Animations } from '../../animation';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  user:any={};
-  constructor() { }
+  private user:User;
+  constructor(
+    private api:ApiService,
+    private alert:AlertService,
+    private router:Router
+    ) {
+    this.user=new User;
+  }
 
   ngOnInit() {
+  }
+
+  register(){
+    this.api.create('user',this.user)
+      .subscribe(
+        data=>{
+          console.log(data);
+          this.router.navigate(['/login']);
+        },
+        error=>{
+          console.log(error);
+        });
+
+    // this.alert.success('Registration',true);
   }
 
 }

@@ -15,23 +15,23 @@ export class ApiService {
   }
 
   getAll(path){
-  	return this.http.get(path,this.jwt()).map((response:Response)=>response.json());
+  	return this.http.get('/api/'+path,this.jwt()).map((response:Response)=>response.json());
   }
 
   get(path,data){
-  	return this.http.get(path+data,this.jwt()).map((response:Response)=>response.json());
+  	return this.http.get('/api/'+path+data,this.jwt()).map((response:Response)=>response.json());
   }
 
   create(path,data){
-  	return this.http.post(path,data,this.jwt()).map((response:Response)=>response.json());
+  	return this.http.post('/api/'+path,data,this.jwt()).map((response:Response)=>response.json());
   }
 
   update(path,data){
-  	return this.http.put(path,data,this.jwt()).map((response:Response)=>response.json());
+  	return this.http.put('/api/'+path,data,this.jwt()).map((response:Response)=>response.json());
   }
 
   delete(path,data){
-  	return this.http.delete(path+data,this.jwt()).map((response:Response)=>response.json());
+  	return this.http.delete('/api/'+path+data,this.jwt()).map((response:Response)=>response.json());
   }
 
 }
