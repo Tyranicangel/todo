@@ -1,8 +1,35 @@
 <div class="mdl-layout mdl-js-layout">
 	<div class="mdl-layout__content">
 		<div class="mdl-grid fullwidth-grid-left">
-			<div class="mdl-cell mdl-cell--2-col color-primary board-main">qwe</div>
-			<div class="mdl-cell mdl-cell--2-col colored board-main">qwe</div>
+			<div class="mdl-cell mdl-cell--2-col" *ngFor="let board of boards">
+				<a routerLink="workspace/{{board._id}}" class="board-main mdl-color--indigo-500 mdl-color-text--white">
+					{{board.title}}
+				</a>
+			</div>
+			<div class="mdl-cell mdl-cell--2-col">
+				<div class="board-main mdl-color--grey-300" *ngIf="!showCreate" (click)="show()">
+					Create new board..
+				</div>
+				<div class="mdl-card mdl-shadow--2dp" *ngIf="showCreate">
+					<div class="mdl-card__title">Create Board</div>
+					<form (ngSubmit)="create()" #createForm="ngForm" novalidate>
+					<div class="mdl-card__supporting-text">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" class="mdl-textfield__input" id="title" [(ngModel)]="board.title" name="title" #title="ngModel" required>
+							<label for="title" class="mdl-textfield__label">Title</label>
+						</div>	
+					</div>
+					<div class="mdl-card__actions mdl-card--border">
+						<button type="submit" class="mdl-button mdl-button--colored mdl-button--raised">Create</button>
+					</div>
+					</form>
+					<div class="mdl-card__menu">
+						<button class="mdl-button mdl-button--icon" (click)="close()">
+							<i class="material-icons">close</i>
+						</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

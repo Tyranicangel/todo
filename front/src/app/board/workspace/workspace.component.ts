@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-workspace',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./workspace.component.css']
 })
 export class WorkspaceComponent implements OnInit {
-
-  constructor() { }
+  private board_id:string;
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit() {
+  	this.board_id=this.route.snapshot.params['id'];
+  	this.getBoardData()
+  }
+
+  getBoardData(){
+  	
   }
 
 }

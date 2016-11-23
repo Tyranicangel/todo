@@ -32,6 +32,6 @@ var auth=function(req,res,next){
 
 router.use('/user',users);
 
-router.use('/boards',auth,boards);
+router.use('/board',auth,boards);
 
 module.exports = router;

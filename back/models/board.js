@@ -4,7 +4,7 @@ var user=require('./user');
 
 var boardSchema=new Schema({
 	title:{type:String,required:true},
-	members:[user],
+	members:[{type:Schema.ObjectId,ref:'users'}],
 	createdBy:String,
 	active:Boolean,
 	created_at:Date,

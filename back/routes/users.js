@@ -7,7 +7,9 @@ var router = express.Router();
 var User = require('../models/user');
 
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  User.find({},function(err,data){
+  	res.json(data);
+  })
 });
 
 router.post('/',function(req,res,next){

@@ -12,7 +12,7 @@ import { WorkspaceComponent } from './workspace/workspace.component';
 				component:BoardComponent,
 				children:[
 					{ path:'',component:DashboardComponent },
-					{ path:'workspace',component:WorkspaceComponent },
+					{ path:'workspace/:id',component:WorkspaceComponent },
 					{ path:'', redirectTo:'', pathMatch:'full' }
 				]
 			}
